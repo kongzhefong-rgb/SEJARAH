@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AR Padanan Perdana Menteri Malaysia</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<video id="webcam" autoplay muted playsinline></video>
+<canvas id="arCanvas"></canvas>
+
+<header>
+  <div class="title">
+    <div class="flag">🇲🇾</div>
+    <div>
+      <h1>Padanan Perdana Menteri Malaysia</h1>
+      <p>Cubit nama, seret ke gambar yang betul dan lepaskan.</p>
+    </div>
+  </div>
+  <div class="hud">
+    <div class="score">⭐ <b id="score">0</b> / 100</div>
+    <div id="status" class="status">● Menunggu kamera...</div>
+  </div>
+</header>
+
+<div id="start" class="modal">
+  <div class="panel">
+    <div class="big">🤲🇲🇾</div>
+    <h2>AR Padanan Perdana Menteri</h2>
+    <p>Gunakan kamera. Gerakkan <b>jari telunjuk</b> ke nama, kemudian <b>cubit ibu jari + telunjuk</b> untuk mengambil nama. Gerakkan ke gambar yang betul dan lepaskan cubitan.</p>
+    <p class="hint">Jika kamera tidak dapat digunakan, tetikus / skrin sentuh juga boleh digunakan.</p>
+    <button id="startBtn">MULA PERMAINAN</button>
+  </div>
+</div>
+
+<div id="win" class="modal hidden">
+  <div class="panel">
+    <div class="big">🎉</div>
+    <h2>Tahniah!</h2>
+    <p>Semua Perdana Menteri telah dipadankan dengan betul.</p>
+    <div class="finalScore"><span id="finalScore">100</span> / 100</div>
+    <button id="restartBtn">MAIN SEMULA</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
