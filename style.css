@@ -16,3 +16,18 @@
 }
 
 .score{color:#ffd34e;min-width:150px;text-align:center}.finalScore{color:#ffd34e}
+
+/* v8: Chinese start screen and clean game transition */
+.intro-panel{width:min(650px,92vw);padding:34px 36px}
+.intro-panel h2{font-size:34px;margin:8px 0 12px}
+.intro-rule{height:3px;width:90px;margin:0 auto 18px;background:#ffd34e;border-radius:99px}
+.intro-main{font-size:18px;line-height:1.7;color:#fff;margin:10px auto 18px;max-width:560px}
+.howto{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;margin:18px 0}
+.howto div{padding:12px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:13px;color:#eaf2fb;font-size:14px}
+.howto span{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;border-radius:50%;background:#0ea5e9;color:#fff;font-weight:900;margin-right:7px}
+.intro-note{font-size:13px;color:#ffd34e;margin:12px 0 20px}
+@media(max-width:720px){
+  .howto{grid-template-columns:1fr}
+  .intro-panel{padding:24px 20px}
+  .intro-panel h2{font-size:26px}
+}

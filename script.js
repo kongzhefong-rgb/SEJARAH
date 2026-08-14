@@ -1,14 +1,14 @@
 const PM_DATA = [
-  {name:"东姑阿都拉曼", term:"第一任首相", label:"第一任首相｜东姑阿都拉曼", image:"assets/tokoh/pm-01.png"},
-  {name:"敦阿都拉萨", term:"第二任首相", label:"第二任首相｜敦阿都拉萨", image:"assets/tokoh/pm-02.png"},
-  {name:"敦胡先翁", term:"第三任首相", label:"第三任首相｜敦胡先翁", image:"assets/tokoh/pm-03.png"},
-  {name:"敦马哈迪医生", term:"第四任首相", label:"第四任首相｜敦马哈迪医生", image:"assets/tokoh/pm-04.png"},
-  {name:"敦阿都拉巴达威", term:"第五任首相", label:"第五任首相｜敦阿都拉巴达威", image:"assets/tokoh/pm-05.png"},
-  {name:"拿督斯里纳吉", term:"第六任首相", label:"第六任首相｜拿督斯里纳吉", image:"assets/tokoh/pm-06.png"},
-  {name:"敦马哈迪医生", term:"第七任首相", label:"第七任首相｜敦马哈迪医生", image:"assets/tokoh/pm-04.png"},
-  {name:"丹斯里慕尤丁", term:"第八任首相", label:"第八任首相｜丹斯里慕尤丁", image:"assets/tokoh/pm-07.png"},
-  {name:"拿督斯里依斯迈沙比里", term:"第九任首相", label:"第九任首相｜拿督斯里依斯迈沙比里", image:"assets/tokoh/pm-08.png"},
-  {name:"拿督斯里安华·依布拉欣", term:"第十任首相", label:"第十任首相｜拿督斯里安华·依布拉欣", image:"assets/tokoh/pm-09.png"}
+  {name:"东姑阿都拉曼", term:"第一任首相", label:"第一任首相\n东姑阿都拉曼", image:"assets/tokoh/pm-01.png"},
+  {name:"敦阿都拉萨", term:"第二任首相", label:"第二任首相\n敦阿都拉萨", image:"assets/tokoh/pm-02.png"},
+  {name:"敦胡先翁", term:"第三任首相", label:"第三任首相\n敦胡先翁", image:"assets/tokoh/pm-03.png"},
+  {name:"敦马哈迪医生", term:"第四任首相", label:"第四任首相\n敦马哈迪医生", image:"assets/tokoh/pm-04.png"},
+  {name:"敦阿都拉巴达威", term:"第五任首相", label:"第五任首相\n敦阿都拉巴达威", image:"assets/tokoh/pm-05.png"},
+  {name:"拿督斯里纳吉", term:"第六任首相", label:"第六任首相\n拿督斯里纳吉", image:"assets/tokoh/pm-06.png"},
+  {name:"敦马哈迪医生", term:"第七任首相", label:"第七任首相\n敦马哈迪医生", image:"assets/tokoh/pm-04.png"},
+  {name:"丹斯里慕尤丁", term:"第八任首相", label:"第八任首相\n丹斯里慕尤丁", image:"assets/tokoh/pm-07.png"},
+  {name:"拿督斯里依斯迈沙比里", term:"第九任首相", label:"第九任首相\n拿督斯里依斯迈沙比里", image:"assets/tokoh/pm-08.png"},
+  {name:"拿督斯里安华·依布拉欣", term:"第十任首相", label:"第十任首相\n拿督斯里安华·依布拉欣", image:"assets/tokoh/pm-09.png"}
 ];
 
 const video=document.getElementById("webcam"), canvas=document.getElementById("arCanvas"), ctx=canvas.getContext("2d");
@@ -102,9 +102,9 @@ function update(){
         cursor.grab=best;
         best.grab=true;
         beep('grab');
-        showToast('🤏 已抓住名字，请移动到正确照片');
+        showToast('🤏 已抓住姓名，请移动到正确照片');
       }else{
-        showToast('☝️ 请先把手指移到名字上');
+        showToast('☝️ 请先把手指移到姓名上');
       }
     }
 
@@ -161,7 +161,7 @@ function draw(){
       ctx.font=`800 ${clamp(t.w*.075,10,15)}px system-ui`;
       ctx.textAlign='center';ctx.textBaseline='middle';
       ctx.fillText(
-        t.filled?t.pm.term:'把名字放这里',
+        t.filled?t.pm.term:'把姓名放这里',
         t.x+t.w/2,t.y+t.h-21
       );
       ctx.restore();
@@ -229,15 +229,15 @@ hands.onResults(r=>{
 
     if(cursor.pinch){
       statusEl.textContent=cursor.grab
-        ? '● 捏住中 — 正在抓取名字'
-        : '● 捏住 — 请对准名字';
+        ? '● 捏住中 — 正在抓取姓名'
+        : '● 捏住 — 请对准姓名';
     }else{
-      statusEl.textContent='● 已检测到手 — 请对准名字';
+      statusEl.textContent='● 已检测到手 — 请对准姓名';
     }
     statusEl.className='status ok';
   }else if(Date.now()-lastHand>700){
     handsDetected=false;
-    statusEl.textContent='● 正在寻找手部...';
+    statusEl.textContent='● 正在寻找手部';
     statusEl.className='status';
   }
 });
@@ -246,7 +246,7 @@ let processing=false;
 let cameraRunning=false;
 
 async function startCamera(){
-  statusEl.textContent='● 正在请求摄像头权限...';
+  statusEl.textContent='● 正在请求摄像头权限';
   statusEl.className='status';
   try{
     if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
@@ -269,7 +269,7 @@ async function startCamera(){
     await video.play();
 
     cameraRunning=true;
-    statusEl.textContent='● 摄像头已开启 — 正在寻找手部...';
+    statusEl.textContent='● 摄像头已开启 — 正在寻找手部';
     statusEl.className='status ok';
 
     processCameraFrames();

@@ -15,33 +15,40 @@
   <div class="title">
     <div class="flag">🇲🇾</div>
     <div>
-      <h1>Padanan Perdana Menteri Malaysia</h1>
-      <p>Cubit nama, seret ke gambar yang betul dan lepaskan.</p>
+      <h1>马来西亚首相配对</h1>
+      <p>用手指捏住姓名，移动到正确的首相照片。</p>
     </div>
   </div>
   <div class="hud">
     <div class="score">⏱️ <b id="timer">00:00.0</b></div>
-    <div id="status" class="status">● 等待摄像头...</div>
+    <div id="status" class="status">● 等待摄像头</div>
   </div>
 </header>
 
 <div id="start" class="modal">
-  <div class="panel">
-    <div class="big">🤲🇲🇾</div>
-    <h2>AR Padanan Perdana Menteri</h2>
-    <p>Gunakan kamera. Gerakkan <b>jari telunjuk</b> ke nama, kemudian <b>cubit ibu jari + telunjuk</b> untuk mengambil nama. Gerakkan ke gambar yang betul dan lepaskan cubitan.</p>
-    <p class="hint">Jika kamera tidak dapat digunakan, tetikus / skrin sentuh juga boleh digunakan.</p>
-    <button id="startBtn">MULA PERMAINAN</button>
+  <div class="panel intro-panel">
+    <div class="big">🇲🇾</div>
+    <h2>马来西亚首相配对</h2>
+    <div class="intro-rule"></div>
+    <p class="intro-main">请把右边的首相姓名，配对到左边正确的首相照片。</p>
+    <div class="howto">
+      <div><span>①</span> 伸出食指，对准右边的姓名</div>
+      <div><span>②</span> 用拇指和食指捏住姓名</div>
+      <div><span>③</span> 移动到正确的照片</div>
+      <div><span>④</span> 松开手指，完成配对</div>
+    </div>
+    <p class="intro-note">游戏不提供选择题，直接用手进行配对。</p>
+    <button id="startBtn">开始游戏</button>
   </div>
 </div>
 
 <div id="win" class="modal hidden">
   <div class="panel">
     <div class="big">🎉</div>
-    <h2>Tahniah!</h2>
-    <p>Semua Perdana Menteri telah dipadankan dengan betul.</p>
-    <div class="finalScore"><span id="finalScore">100</span> / 100</div>
-    <button id="restartBtn">MAIN SEMULA</button>
+    <h2>恭喜完成！</h2>
+    <p>你已经完成全部十位首相的配对。</p>
+    <div class="finalScore">完成用时：<span id="finalTime">00:00.0</span></div>
+    <button id="restartBtn">再玩一次</button>
   </div>
 </div>
 
