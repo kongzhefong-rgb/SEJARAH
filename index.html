@@ -45,10 +45,30 @@
 <div id="win" class="modal hidden">
   <div class="panel">
     <div class="big">🎉</div>
-    <h2>恭喜完成！</h2>
+    <h2>第一关完成！</h2>
     <p>你已经完成全部十位首相的配对。</p>
-    <div class="finalScore">完成用时：<span id="finalTime">00:00.0</span></div>
-    <button id="restartBtn">再玩一次</button>
+    <div class="finalScore">第一关用时：<span id="finalTime">00:00.0</span></div>
+    <button id="nextStationBtn">进入第二关 🎵</button>
+  </div>
+</div>
+
+<div id="station2" class="station2 hidden">
+  <div class="s2-top">
+    <div class="s2-title"><span>🎵</span><div><strong>第二关：爱国歌曲</strong><small>听歌曲，然后用手把正确的歌曲名称拖进答案格</small></div></div>
+    <div class="s2-hud"><span id="s2Score">⭐ 100</span><span>⏱️ <b id="s2Timer">00:00.0</b></span></div>
+  </div>
+  <div class="s2-overlay">
+    <div class="s2-instruction">☝️ 靠近歌曲名称 → 🟡 锁定 → 🤏 捏住 → 拖进答案格</div>
+    <div class="s2-player">
+      <div class="music-icon" id="musicIcon">🎵</div>
+      <h2 id="songQuestion">请先播放歌曲</h2>
+      <p id="playHint">认真聆听，然后选择正确的歌曲名称。</p>
+      <button id="playSongBtn" class="play-btn">▶ 播放歌曲</button>
+      <div class="play-count" id="playCount">本题可播放 2 次</div>
+    </div>
+    <div class="s2-answer-slot" id="s2AnswerSlot"><span>把正确的歌曲名称放到这里</span></div>
+    <div id="songFeedback" class="song-feedback"></div>
+    <div class="s2-penalty">答错一次：<b>−10 分</b></div>
   </div>
 </div>
 
